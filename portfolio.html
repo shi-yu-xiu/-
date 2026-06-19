@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>钟新诚 · AI视觉设计师作品集</title>
+<style>
+:root{--bg-primary:#050505;--bg-secondary:#0a0a0a;--bg-card:#111;--bg-card-hover:#1a1a1a;--border-subtle:rgba(255,255,255,0.06);--border-hover:rgba(255,255,255,0.12);--text-primary:#f0f0f0;--text-secondary:#888;--text-muted:#555;--accent:#6366f1;--accent-hover:#5558e6;--accent-glow:rgba(99,102,241,0.15);--accent-gradient:linear-gradient(135deg,#6366f1,#8b5cf6);--font-sans:"PingFang SC","Microsoft YaHei","Noto Sans SC","SF Pro Display","Helvetica Neue",sans-serif;--font-mono:"SF Mono","Fira Code",Consolas,monospace;--container:1700px;--nav-height:72px;--radius-sm:8px;--radius-md:12px;--radius-lg:20px;--transition:0.4s cubic-bezier(0.25,0.46,0.45,0.94)}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:var(--font-sans);background:var(--bg-primary);color:var(--text-primary);line-height:1.6;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:hidden}a{color:inherit;text-decoration:none}img{max-width:100%;display:block}::selection{background:var(--accent);color:#fff}::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:var(--bg-primary)}::-webkit-scrollbar-thumb{background:var(--text-muted);border-radius:3px}::-webkit-scrollbar-thumb:hover{background:var(--text-secondary)}
+.container{width:100%;max-width:var(--container);margin:0 auto;padding:0 48px}.section{padding:120px 0;position:relative}
+.section-label{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:500;letter-spacing:0.1em;color:var(--accent);text-transform:uppercase;margin-bottom:16px}.section-label::before{content:"";width:24px;height:1px;background:var(--accent)}
+.section-title{font-size:clamp(28px,3.2vw,52px);font-weight:700;letter-spacing:-0.02em;line-height:1.15;margin-bottom:20px}.section-sub{font-size:clamp(15px,1.1vw,18px);color:var(--text-secondary);max-width:560px;line-height:1.7}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity 0.8s ease,transform 0.8s ease}.reveal.visible{opacity:1;transform:translateY(0)}.reveal-delay-1{transition-delay:0.1s}.reveal-delay-2{transition-delay:0.2s}.reveal-delay-3{transition-delay:0.3s}.reveal-delay-4{transition-delay:0.4s}
+.navbar{position:fixed;top:0;left:0;right:0;z-index:1000;height:var(--nav-height);display:flex;align-items:center;transition:all var(--transition);padding:0 48px}.navbar.scrolled{background:rgba(5,5,5,0.75);backdrop-filter:blur(24px) saturate(1.2);-webkit-backdrop-filter:blur(24px) saturate(1.2);border-bottom:1px solid var(--border-subtle)}.navbar .container{display:flex;align-items:center;justify-content:space-between;padding:0}
+.navbar-logo{font-size:20px;font-weight:700;letter-spacing:-0.03em;display:flex;align-items:center;gap:10px}.navbar-logo .logo-dot{width:8px;height:8px;border-radius:50%;background:var(--accent-gradient);display:inline-block}
+.navbar-links{display:flex;align-items:center;gap:32px;list-style:none}.navbar-links a{font-size:14px;font-weight:500;color:var(--text-secondary);transition:color var(--transition);position:relative;padding:4px 0;cursor:pointer}.navbar-links a::after{content:"";position:absolute;bottom:0;left:0;width:0;height:1px;background:var(--accent);transition:width var(--transition)}.navbar-links a:hover{color:var(--text-primary)}.navbar-links a:hover::after{width:100%}
+.navbar-cta{padding:10px 24px;border-radius:50px;background:var(--accent-gradient);color:#fff !important;font-weight:600;font-size:13px;transition:transform var(--transition),box-shadow var(--transition) !important;border:none;cursor:pointer}.navbar-cta:hover{transform:translateY(-1px);box-shadow:0 8px 24px rgba(99,102,241,0.3) !important}.navbar-cta::after{display:none !important}
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden}.hero-canvas{position:absolute;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none}.hero-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:radial-gradient(ellipse at 50% 50%,rgba(99,102,241,0.03) 0%,transparent 60%);z-index:1;pointer-events:none}.hero .container{position:relative;z-index:2;display:flex;flex-direction:column;justify-content:center;min-height:100vh;padding-top:var(--nav-height)}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;padding:6px 16px;border-radius:50px;border:1px solid var(--border-subtle);font-size:12px;color:var(--text-secondary);margin-bottom:32px;width:fit-content;background:rgba(255,255,255,0.03)}.hero-badge-dot{width:5px;height:5px;border-radius:50%;background:#22c55e;display:inline-block;animation:pulse-dot 2s ease-in-out infinite}
+@keyframes pulse-dot{0%,100%{opacity:1}50%{opacity:0.4}}
+.hero-title{font-size:clamp(42px,5.5vw,88px);font-weight:700;letter-spacing:-0.03em;line-height:1.05;margin-bottom:24px;max-width:900px}.hero-title .gradient-text{background:var(--accent-gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sub{font-size:clamp(16px,1.3vw,22px);color:var(--text-secondary);max-width:580px;line-height:1.7;margin-bottom:40px}.hero-actions{display:flex;gap:16px;align-items:center}
+.btn-primary,.btn-secondary{padding:14px 32px;border-radius:50px;font-size:15px;font-weight:600;cursor:pointer;transition:all var(--transition);display:inline-flex;align-items:center;gap:8px;border:none}.btn-primary{background:var(--accent-gradient);color:#fff;box-shadow:0 4px 20px rgba(99,102,241,0.25)}.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(99,102,241,0.35)}.btn-secondary{background:rgba(255,255,255,0.04);color:var(--text-primary);border:1px solid var(--border-subtle)}.btn-secondary:hover{background:rgba(255,255,255,0.08);border-color:var(--border-hover)}
+.hero-scroll{position:absolute;bottom:48px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;color:var(--text-muted);font-size:11px;letter-spacing:0.15em;animation:float 2.5s ease-in-out infinite;z-index:2}.hero-scroll-line{width:1px;height:40px;background:linear-gradient(to bottom,var(--text-muted),transparent)}
+@keyframes float{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(-6px)}}
+.about-bg{position:absolute;top:0;left:0;width:100%;height:100%;background:radial-gradient(ellipse at 80% 20%,rgba(99,102,241,0.02) 0%,transparent 60%);pointer-events:none}.about-grid{display:grid;grid-template-columns:320px 1fr;gap:80px;align-items:start}
+.about-avatar{width:280px;height:340px;border-radius:var(--radius-lg);background:linear-gradient(145deg,#1a1a2e,#16213e);position:relative;overflow:hidden;margin-bottom:24px;border:1px solid var(--border-subtle)}.about-avatar::before{content:"";position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:conic-gradient(from 0deg,transparent,rgba(99,102,241,0.1),transparent,rgba(139,92,246,0.1),transparent);animation:rotate-glow 8s linear infinite}.about-avatar-inner{position:relative;z-index:1;width:100%;height:100%;display:flex;align-items:center;justify-content:center}.about-avatar-inner svg{width:120px;height:120px;opacity:0.3}
+@keyframes rotate-glow{to{transform:rotate(360deg)}}.about-name{font-size:28px;font-weight:700;letter-spacing:-0.02em;margin-bottom:4px}.about-role{font-size:14px;color:var(--accent);margin-bottom:20px;font-weight:500}.about-contact-list{display:flex;flex-direction:column;gap:12px}.about-contact-item{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--text-secondary);transition:color var(--transition)}.about-contact-item:hover{color:var(--text-primary)}.about-contact-item svg{width:16px;height:16px;flex-shrink:0;opacity:0.5}
+.about-content .section-title{font-size:clamp(24px,2.5vw,40px)}.about-desc{font-size:clamp(14px,1.05vw,17px);color:var(--text-secondary);line-height:1.8;margin-bottom:40px}.about-desc strong{color:var(--text-primary);font-weight:600}.about-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}.about-stat{padding:24px;border-radius:var(--radius-md);background:var(--bg-card);border:1px solid var(--border-subtle);text-align:center;transition:all var(--transition)}.about-stat:hover{background:var(--bg-card-hover);border-color:var(--border-hover);transform:translateY(-2px)}.about-stat-num{font-size:clamp(28px,1.8vw,36px);font-weight:700;color:var(--text-primary);letter-spacing:-0.02em;margin-bottom:4px}.about-stat-num .plus{color:var(--accent);font-weight:400}.about-stat-label{font-size:12px;color:var(--text-muted);letter-spacing:0.05em}
+.projects-header{margin-bottom:56px}.projects-grid{display:grid;grid-template-columns:1fr;gap:32px}.project-card{display:grid;grid-template-columns:1fr 1fr;border-radius:var(--radius-lg);overflow:hidden;background:var(--bg-card);border:1px solid var(--border-subtle);transition:all var(--transition);cursor:pointer}.project-card:hover{border-color:var(--border-hover);background:var(--bg-card-hover);transform:translateY(-4px);box-shadow:0 20px 60px rgba(0,0,0,0.3)}.project-card-image{position:relative;overflow:hidden;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center}.project-card-image img{width:100%;height:100%;object-fit:cover;transition:transform 0.6s ease}.project-card:hover .project-card-image img{transform:scale(1.05)}.project-card-info{padding:48px;display:flex;flex-direction:column;justify-content:center}
+.project-card-tag{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:600;letter-spacing:0.08em;color:var(--accent);text-transform:uppercase;margin-bottom:12px}.project-card-tag::before{content:"";width:16px;height:1px;background:var(--accent)}.project-card-title{font-size:clamp(20px,1.6vw,28px);font-weight:700;letter-spacing:-0.02em;margin-bottom:8px;line-height:1.25}.project-card-sub{font-size:13px;color:var(--text-muted);margin-bottom:16px}.project-card-desc{font-size:clamp(13px,0.95vw,15px);color:var(--text-secondary);line-height:1.7}
+.project-card-arrow{margin-top:24px;width:40px;height:40px;border-radius:50%;border:1px solid var(--border-subtle);display:flex;align-items:center;justify-content:center;transition:all var(--transition)}.project-card:hover .project-card-arrow{background:var(--accent-gradient);border-color:transparent;transform:translateX(4px)}.project-card-arrow svg{width:18px;height:18px;color:var(--text-secondary)}.project-card:hover .project-card-arrow svg{color:#fff}
+
+.project-card-info-category{padding:48px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start}
+.project-card-category{font-size:clamp(36px,3.5vw,64px);font-weight:700;letter-spacing:-0.03em;line-height:1.05;background:var(--accent-gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:16px}
+.project-card:hover .project-card-category{background:linear-gradient(135deg,#818cf8,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.project-img-1{background:linear-gradient(135deg,#0f0c29,#302b63,#24243e);position:relative}.project-img-1::after{content:"";position:absolute;width:120px;height:120px;border-radius:50%;background:rgba(99,102,241,0.08);top:30%;left:20%;filter:blur(40px)}.project-img-2{background:linear-gradient(135deg,#1a1a2e,#16213e,#0f3460);position:relative}.project-img-2::after{content:"";position:absolute;width:100px;height:100px;border-radius:50%;background:rgba(99,102,241,0.06);bottom:20%;right:25%;filter:blur(30px)}.project-img-3{background:linear-gradient(135deg,#0d0d0d,#1a1a2e,#2d2d44);position:relative}
+.strengths-bg{position:absolute;top:0;left:0;width:100%;height:100%;background:radial-gradient(ellipse at 30% 80%,rgba(99,102,241,0.015) 0%,transparent 60%);pointer-events:none}.strengths-header{margin-bottom:56px;text-align:center}.strengths-header .section-sub{max-width:600px;margin:0 auto}.strengths-header .section-label{justify-content:center}.strengths-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.strength-card{padding:40px 32px;border-radius:var(--radius-md);background:var(--bg-card);border:1px solid var(--border-subtle);transition:all var(--transition);position:relative;overflow:hidden}.strength-card::before{content:"";position:absolute;top:0;left:0;width:100%;height:2px;background:var(--accent-gradient);opacity:0;transition:opacity var(--transition)}.strength-card:hover::before{opacity:1}.strength-card:hover{background:var(--bg-card-hover);border-color:var(--border-hover);transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,0.2)}
+.strength-icon{width:48px;height:48px;border-radius:var(--radius-sm);background:rgba(99,102,241,0.08);display:flex;align-items:center;justify-content:center;margin-bottom:20px;transition:all var(--transition)}.strength-card:hover .strength-icon{background:rgba(99,102,241,0.15)}.strength-icon svg{width:22px;height:22px;color:var(--accent)}.strength-title{font-size:18px;font-weight:600;margin-bottom:4px}.strength-sub{font-size:12px;color:var(--text-muted);margin-bottom:14px;letter-spacing:0.03em}.strength-desc{font-size:14px;color:var(--text-secondary);line-height:1.7}
+.contact{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden}.contact-bg{position:absolute;top:0;left:0;width:100%;height:100%;background:radial-gradient(ellipse at 50% 80%,rgba(99,102,241,0.03) 0%,transparent 60%);pointer-events:none}.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}.contact-title{font-size:clamp(28px,3.2vw,52px);font-weight:700;letter-spacing:-0.02em;line-height:1.1;margin-bottom:16px}.contact-sub{font-size:clamp(14px,1.1vw,17px);color:var(--text-secondary);line-height:1.7;margin-bottom:40px;max-width:480px}
+.contact-info-list{display:flex;flex-direction:column;gap:20px}.contact-info-item{display:flex;align-items:center;gap:14px;font-size:14px;color:var(--text-secondary);transition:color var(--transition)}.contact-info-item:hover{color:var(--text-primary)}.contact-info-item svg{width:20px;height:20px;color:var(--accent);flex-shrink:0}
+.contact-form{padding:48px;border-radius:var(--radius-lg);background:var(--bg-card);border:1px solid var(--border-subtle)}.form-row{margin-bottom:20px}.form-row label{display:block;font-size:12px;font-weight:600;letter-spacing:0.05em;margin-bottom:8px;color:var(--text-secondary)}.form-input,.form-textarea{width:100%;padding:14px 16px;border-radius:var(--radius-sm);background:rgba(255,255,255,0.03);border:1px solid var(--border-subtle);color:var(--text-primary);font-size:14px;font-family:var(--font-sans);transition:all var(--transition);outline:none}.form-input:focus,.form-textarea:focus{border-color:var(--accent);background:rgba(99,102,241,0.04);box-shadow:0 0 0 3px var(--accent-glow)}.form-textarea{resize:vertical;min-height:120px}.form-submit{width:100%;padding:14px 32px;border-radius:50px;background:var(--accent-gradient);color:#fff;font-size:15px;font-weight:600;cursor:pointer;border:none;transition:all var(--transition);display:flex;align-items:center;justify-content:center;gap:8px}.form-submit:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(99,102,241,0.3)}
+.contact-footer{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);font-size:12px;color:var(--text-muted);text-align:center;z-index:1}
+@media(max-width:1400px){.container{padding:0 40px}.strengths-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:1200px){.about-grid{grid-template-columns:1fr;gap:48px}.about-profile{display:flex;gap:32px;align-items:flex-start}.about-avatar{width:200px;height:240px;flex-shrink:0;margin-bottom:0}.contact-grid{grid-template-columns:1fr;gap:48px}}@media(max-width:900px){.container{padding:0 24px}.section{padding:80px 0}.hero-title{font-size:clamp(32px,8vw,48px)}.navbar-links{display:none}.about-profile{flex-direction:column}.about-avatar{width:160px;height:200px}.about-stats{grid-template-columns:repeat(2,1fr)}.project-card{grid-template-columns:1fr}.project-card-image{aspect-ratio:16/9}.project-card-info{padding:32px}.strengths-grid{grid-template-columns:1fr}.contact-form{padding:32px}}
+</style>
+</head><body>
+<!-- Navbar -->
+<nav class="navbar" id="navbar">
+  <div class="container">
+    <a href="#hero" class="navbar-logo"><span class="logo-dot"></span>钟新诚</a>
+    <ul class="navbar-links">
+      <li><a href="#about">个人经历</a></li>
+      <li><a href="#projects">精选项目</a></li>
+      <li><a href="#strengths">专业优势</a></li>
+      <li><a href="#contact" class="navbar-cta">联系我</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero" id="hero">
+  <canvas class="hero-canvas" id="heroCanvas"></canvas>
+  <div class="hero-overlay"></div>
+  <div class="container">
+    <div class="hero-badge reveal">
+      <span class="hero-badge-dot"></span>
+      在线接稿 · 全国可合作
+    </div>
+    <h1 class="hero-title reveal reveal-delay-1">
+      钟新诚<br>
+      <span class="gradient-text">AI视觉设计师作品集</span>
+    </h1>
+    <p class="hero-sub reveal reveal-delay-2">
+      电商视觉设计师 / AIGC 创作者<br>
+      用设计连接商业与美学，为品牌创造有温度的视觉体验
+    </p>
+    <div class="hero-actions reveal reveal-delay-3">
+      <a href="#projects" class="btn-primary">
+        查看作品
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </a>
+      <a href="#contact" class="btn-secondary">联系我</a>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <span>向下探索</span>
+    <div class="hero-scroll-line"></div>
+  </div>
+</section>
+<!-- About -->
+<section class="section" id="about">
+  <div class="about-bg"></div>
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-profile reveal">
+        <div class="about-avatar">
+          <div class="about-avatar-inner">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></svg>
+          </div>
+        </div>
+        <h2 class="about-name">钟新诚</h2>
+        <p class="about-role">AI视觉设计师 / 电商视觉设计</p>
+        <div class="about-contact-list">
+          <a href="mailto:loyalzlax@gmail.com" class="about-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            loyalzlax@gmail.com
+          </a>
+          <a href="#" class="about-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            19067817574
+          </a>
+          <span class="about-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            广州
+          </span>
+        </div>
+      </div>
+      <div class="about-content">
+        <div class="section-label reveal">关于我</div>
+        <h2 class="section-title reveal reveal-delay-1">用设计驱动转化<br>用数据验证价值</h2>
+        <div class="about-desc reveal reveal-delay-2">
+          <p>你好，我是 <strong>钟新诚</strong>，一名兼具品牌审美与商业转化思维的电商视觉设计师。</p><br>
+<p>拥有 3 年电商全链路视觉设计经验与直播中控操盘能力，累计完成千余件商品视觉物料。精通 PS/AI/PR 等设计工具，并熟练运用 AIGC 技术实现创意出图与物料量产，搭建多场景标准化视觉模板库，物料制作效率提升 70%，主图平均点击率提升 30%。</p><br>
+<p>兼任直播中控期间，独立完成 50+ 场直播零失误操盘，实现「视觉设计 — 实时调整 — 数据复盘 — 迭代优化」的全链路闭环，兼具品牌审美与商业转化思维，为店铺业绩增长提供双向赋能。</p>
+        </div>
+        <div class="about-stats reveal reveal-delay-3">
+          <div class="about-stat"><div class="about-stat-num">3<span class="plus">+</span></div><div class="about-stat-label">年设计经验</div></div>
+          <div class="about-stat"><div class="about-stat-num">1000<span class="plus">+</span></div><div class="about-stat-label">商品视觉物料</div></div>
+          <div class="about-stat"><div class="about-stat-num">50<span class="plus">+</span></div><div class="about-stat-label">直播场次操盘</div></div>
+          <div class="about-stat"><div class="about-stat-num">70<span class="plus">%</span></div><div class="about-stat-label">物料提效</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Projects -->
+<section class="section" id="projects">
+  <div class="container">
+    <div class="projects-header reveal">
+      <div class="section-label">精选案例</div>
+      <h2 class="section-title">作品展示</h2>
+      
+    </div>
+    <div class="projects-grid">
+      <div class="project-card reveal reveal-delay-1">
+        <div class="project-card-image project-img-1">
+          <img src="https://cdn.phototourl.com/free/2026-06-17-8f9f3651-8c0e-433c-901a-194c37f2fa7c.png" alt="电商设计" style="width:100%;height:100%;object-fit:cover">
+        </div>
+        <div class="project-card-info project-card-info-category">
+          <h2 class="project-card-category">— 电商设计</h2>
+          <div class="project-card-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card reveal reveal-delay-2">
+        <div class="project-card-image project-img-2">
+          <img src="https://cdn.phototourl.com/free/2026-06-17-bfcac295-a65d-4fc7-9d47-987465ac78bb.jpg" alt="平面设计" style="width:100%;height:100%;object-fit:cover">
+        </div>
+        <div class="project-card-info project-card-info-category">
+          <h2 class="project-card-category">— 平面设计</h2>
+          <div class="project-card-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card reveal reveal-delay-3">
+        <div class="project-card-image project-img-3">
+          <img src="https://cdn.phototourl.com/free/2026-06-17-266767c9-8806-4bb9-9d8b-f7faafcccaca.jpg" alt="品牌设计" style="width:100%;height:100%;object-fit:cover">
+        </div>
+        <div class="project-card-info project-card-info-category">
+          <h2 class="project-card-category">— 品牌设计</h2>
+          <div class="project-card-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Strengths -->
+<section class="section" id="strengths">
+  <div class="strengths-bg"></div>
+  <div class="container">
+    <div class="strengths-header reveal">
+      <div class="section-label">核心能力</div>
+      <h2 class="section-title">专业优势</h2>
+      <p class="section-sub">电商设计实战 × AIGC 提效 × 直播运营落地，三维能力驱动品效增长</p>
+    </div>
+    <div class="strengths-grid">
+      <div class="strength-card reveal reveal-delay-1">
+        <div class="strength-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 6 6v0a6 6 0 0 1-6 6a6 6 0 0 1-6-6v0a6 6 0 0 0 6-6Z"/><path d="M12 15v6"/><path d="M8 21h8"/></svg>
+        </div>
+        <h3 class="strength-title">视觉设计</h3>
+        <p class="strength-sub">电商全链路视觉输出</p>
+        <p class="strength-desc">精通 PS/AI/CDR/PR 等主流设计软件，3年电商全链路视觉设计实战经验。从直播视觉体系搭建到商品主图、详情页、活动海报的全品类物料输出，兼顾品牌调性与商业转化目标。</p>
+      </div>
+      <div class="strength-card reveal reveal-delay-2">
+        <div class="strength-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="12" x="3" y="6" rx="2"/><path d="M3 12h18"/><line x1="6" x2="6" y1="15" y2="18"/><line x1="18" x2="18" y1="15" y2="18"/></svg>
+        </div>
+        <h3 class="strength-title">AI 设计</h3>
+        <p class="strength-sub">AIGC 提效实战</p>
+        <p class="strength-desc">熟练运用 AI 工具实现创意出图、物料量产与视觉优化。通过 AIGC + 人工协同的工作流，物料制作效率提升 70%，主图平均点击率提升 30%，构建标准化视觉模板库实现高效交付。</p>
+      </div>
+      <div class="strength-card reveal reveal-delay-3">
+        <div class="strength-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h16"/><path d="M4 20V8l8-6 8 6v12"/><path d="M9 12v4"/><path d="M15 12v4"/><path d="M9 8v0"/><path d="M15 8v0"/></svg>
+        </div>
+        <h3 class="strength-title">全链路设计</h3>
+        <p class="strength-sub">视觉 + 运营双岗位闭环</p>
+        <p class="strength-desc">具备从视觉设计到直播落地的全链路能力，一人覆盖美工设计 + 直播中控双核心岗位。通过视觉与运营的深度联动，实现「设计 — 执行 — 复盘 — 优化」的品效合一闭环，大幅降低团队协同成本。</p>
+      </div>
+      <div class="strength-card reveal reveal-delay-4">
+        <div class="strength-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        </div>
+        <h3 class="strength-title">模板化提效</h3>
+        <p class="strength-sub">标准化模板库搭建与迭代</p>
+        <p class="strength-desc">擅长多场景标准化模板库搭建，针对日常直播、大促专场、新品首发等场景制定可复用的视觉规范。兼具品牌审美与数据思维，基于直播数据持续迭代视觉策略，让设计服务于转化目标。</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Contact -->
+<section class="contact" id="contact">
+  <div class="contact-bg"></div>
+  <div class="container">
+    <div class="contact-grid">
+      <div class="reveal">
+        <div class="section-label">联系我</div>
+        <h2 class="contact-title">用视觉驱动转化<br>期待与你合作</h2>
+        <p class="contact-sub">如果您需要电商视觉设计、直播物料支持、或是希望通过 AIGC 提升设计效率，欢迎与我联系。期待用我的专业能力为您的品牌创造真实价值。</p>
+        <div class="contact-info-list">
+          <div class="contact-info-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            <span>loyalzlax@gmail.com</span>
+          </div>
+          <div class="contact-info-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <span>19067817574</span>
+          </div>
+          <div class="contact-info-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-10a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>广州</span>
+          </div>
+        </div>
+      </div>
+      <form class="contact-form reveal reveal-delay-1" onsubmit="event.preventDefault();alert('感谢留言！(演示模式)')">
+        <div class="form-row"><label for="name">姓名</label><input type="text" id="name" class="form-input" placeholder="请输入您的姓名" required></div>
+        <div class="form-row"><label for="email">邮箱</label><input type="email" id="email" class="form-input" placeholder="请输入您的邮箱" required></div>
+        <div class="form-row"><label for="message">留言</label><textarea id="message" class="form-textarea" placeholder="请描述您的合作需求…" required></textarea></div>
+        <button type="submit" class="form-submit">
+          发送留言
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13"/><path d="m22 2-7 20-4-9-9-4Z"/></svg>
+        </button>
+      </form>
+    </div>
+  </div>
+  <div class="contact-footer">&copy; 2026 钟新诚 · AI视觉设计师</div>
+</section>
+<script>
+// ===== Hero Canvas Particle Animation =====
+(function(){
+  var c=document.getElementById('heroCanvas'),ctx=c.getContext('2d');
+  var p=[],mx=0,my=0,W,H;
+  function resize(){W=c.width=window.innerWidth;H=c.height=window.innerHeight}
+  resize();window.addEventListener('resize',resize);
+  document.addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY});
+  function P(){this.reset=function(){
+    this.x=Math.random()*W;this.y=Math.random()*H;
+    this.size=Math.random()*2+0.5;
+    this.sx=(Math.random()-0.5)*0.3;this.sy=(Math.random()-0.5)*0.3;
+    this.o=Math.random()*0.5+0.1
+  };this.reset();this.update=function(){
+    this.x+=this.sx;this.y+=this.sy;
+    var dx=mx-this.x,dy=my-this.y,d=Math.sqrt(dx*dx+dy*dy);
+    if(d<200){this.x-=dx*0.001;this.y-=dy*0.001}
+    if(this.x<0||this.x>W||this.y<0||this.y>H)this.reset()
+  };this.draw=function(){
+    ctx.beginPath();ctx.arc(this.x,this.y,this.size,0,Math.PI*2);
+    ctx.fillStyle='rgba(99,102,241,'+this.o+')';ctx.fill()
+  }}
+  var n=Math.min(80,Math.floor(W*H/20000));
+  for(var i=0;i<n;i++)p.push(new P());
+  function connect(){
+    for(var i=0;i<p.length;i++)for(var j=i+1;j<p.length;j++){
+      var dx=p[i].x-p[j].x,dy=p[i].y-p[j].y,d=Math.sqrt(dx*dx+dy*dy);
+      if(d<150){ctx.beginPath();ctx.moveTo(p[i].x,p[i].y);ctx.lineTo(p[j].x,p[j].y);
+        ctx.strokeStyle='rgba(99,102,241,'+(0.04*(1-d/150))+')';ctx.lineWidth=0.5;ctx.stroke()}
+    }
+  }
+  function animate(){ctx.clearRect(0,0,W,H);for(var i=0;i<p.length;i++){p[i].update();p[i].draw()}connect();requestAnimationFrame(animate)}
+  animate()
+})();
+
+// ===== Navbar scroll =====
+(function(){
+  var nav=document.getElementById('navbar');
+  window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',window.scrollY>60)},{passive:true})
+})();
+
+// ===== Reveal animations =====
+(function(){
+  var obs=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}})
+  },{threshold:0.1});
+  document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el)})
+})();
+
+// ===== Smooth scroll =====
+document.querySelectorAll('a[href^="#"]').forEach(function(a){
+  a.addEventListener('click',function(e){
+    e.preventDefault();var t=document.querySelector(this.getAttribute('href'));
+    if(!t)return;var off=72,top=t.getBoundingClientRect().top+window.scrollY-off;
+    window.scrollTo({top:top,behavior:'smooth'})
+  })
+});
+</script>
+</body>
+</html>
