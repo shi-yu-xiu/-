@@ -25,10 +25,19 @@
            { id: 116, title: '贝奇乐湿巾主图 16', desc: '', img: '/images/w16.jpg' },
          ]
        },
-       '大促视觉': {
-         desc: '618/双11等大促节点视觉策略与模板化输出',
+              '某沙发主图详情页': {
+         desc: '沙发产品电商主图设计',
          works: [
-           { id: 3, title: '大促视觉全案', desc: '专场视觉策略与标准化模板库搭建，适配各类大促场景' }
+           { id: 201, title: '沙发主图 01', desc: '', img: '/images/sofa_01.jpg' },
+           { id: 202, title: '沙发主图 02', desc: '', img: '/images/sofa_02.jpg' },
+           { id: 203, title: '沙发主图 03', desc: '', img: '/images/sofa_03.jpg' },
+           { id: 204, title: '沙发主图 04', desc: '', img: '/images/sofa_04.jpg' },
+           { id: 205, title: '沙发详情页 01', desc: '', img: '/images/sofa_05.jpg' },
+           { id: 206, title: '沙发详情页 02', desc: '', img: '/images/sofa_06.jpg' },
+           { id: 207, title: '沙发详情页 03', desc: '', img: '/images/sofa_07.jpg' },
+           { id: 208, title: '沙发详情页 04', desc: '', img: '/images/sofa_08.jpg' },
+           { id: 209, title: '沙发详情页 05', desc: '', img: '/images/sofa_09.jpg' },
+           { id: 210, title: '沙发详情页 06', desc: '', img: '/images/sofa_10.jpg' }
          ]
        },
        '直播素材': {
